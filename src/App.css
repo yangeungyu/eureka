@@ -1,0 +1,141 @@
+/* 메뉴 버튼 스타일 */
+.menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 10; /* 메뉴가 다른 요소 위에 표시되도록 설정 */
+}
+
+/* 메뉴창 스타일 */
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%; /* 메뉴창은 화면의 1/4만 차지 */
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 9; /* 메뉴가 다른 요소 아래에 표시되도록 설정 */
+}
+
+.menu-container.open {
+  left: 0; /* 메뉴가 열리면 화면 왼쪽에서 나옴 */
+}
+
+.menu-container a {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: block;
+}
+
+.menu-container a:hover {
+  background-color: #575757;
+}
+
+/* 종료 버튼 스타일 */
+.exit-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  color: #f44336;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* 폭발 이미지 스타일 */
+.explosion-container {
+  position: absolute;
+  bottom: 10px; /* 화면 아래쪽에 위치 */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.explosion-image {
+  width: 150px; /* 폭발 이미지 크기 */
+  animation: explode 1s ease-out; /* 애니메이션 */
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 기존 스타일들 */
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.logo {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  color: #007bff;
+}
+
+.start-screen p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.level-selection-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.level-buttons button {
+  font-size: 1.5em;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.level-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.timer-box {
+  padding: 10px 20px;
+  font-size: 1.5em;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.timer-box:hover {
+  background-color: #e64a19;
+}
