@@ -56,20 +56,16 @@ function App() {
 
 // 처음 화면 컴포넌트
 function StartScreen() {
-  const navigate = useNavigate(); // 페이지 이동을 위한 훅
+  const navigate = useNavigate();
 
   return (
-    <div
-      className="start-screen"
-      onClick={() => navigate('/menu1')} // 클릭 시 다음 화면으로 이동
-    >
-      {/* 로고 */}
+    <div className="start-screen">
       <div className="logo-container">
-        <img src={logo} alt="Logo" className="app-logo" />
+        <img src="/logo192.png" alt="UTOPICAH Logo" className="app-logo" />
       </div>
-      {/* uTOPIC_AH 글씨 */}
-      <h1 className="logo">UTOPICAH</h1>
-      <p>화면을 누르면 시작됩니다.</p>
+      <button className="start-button" onClick={() => navigate('/menu1')}>
+        START
+      </button>
     </div>
   );
 }

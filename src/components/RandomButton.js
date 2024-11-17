@@ -2,17 +2,9 @@ import React from 'react';
 
 function RandomButton({ getTopic }) {
   return (
-    <div style={{ textAlign: 'center', margin: '1em' }}>
+    <div className="random-button-container">
       <button
-        style={{
-          padding: '10px 20px',
-          fontSize: '16px',
-          backgroundColor: '#007BFF',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer',
-        }}
+        className="random-button"
         onClick={getTopic}
       >
         랜덤 대화 주제 받기! 🎲
