@@ -378,23 +378,41 @@ button:disabled {
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-align: center;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   font-weight: 600;
   color: white;
   font-family: 'Montserrat', sans-serif;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
   height: 430px;
+  position: relative;
 }
 
 .level-icon {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+}
+
+.level-buttons button:nth-child(2) img.level-icon {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 70px;
+  height: 70px;
+}
+
+.level-buttons button:nth-child(3) img.level-icon {
+  right: -20px;
+  left: auto;
+  bottom: 40px;
+  width: 90px;
+  height: 70px;
+  transform: rotate(25deg);
 }
 
 .level-buttons button:nth-child(1) {
@@ -560,13 +578,26 @@ button:disabled {
 }
 
 .game-logo {
-  width: 80px;
-  height: 80px;
+  width: 300px;
+  height: auto;
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 48px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 15px;
+  line-height: 1;
 }
 
 @media (max-width: 768px) {

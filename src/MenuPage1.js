@@ -96,7 +96,7 @@ function MenuPage1() {
   return (
     <div className="menu-page">
       <div>
-        <img src="/logo192.png" alt="logo" className="game-logo" />
+        <img src="/logos2.png" alt="logo" className="game-logo" />
         {!selectedLevel ? (
           <div className="level-selection-screen">
             <div className="level-buttons">
