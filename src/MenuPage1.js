@@ -127,7 +127,7 @@ function MenuPage1() {
               )}
               {currentTopic && <TopicCard topic={currentTopic} />}
               <button className="next-topic-button" onClick={getRandomTopic}>
-                다음 질문
+                다음 질문 →
               </button>
             </>
           )

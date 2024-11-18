@@ -153,33 +153,36 @@ body {
 
 .topic-card {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 80%;
-  max-width: 800px;
+  width: 90%;
+  max-width: 1200px;
   z-index: 10;
 }
 
 .topic-card h2 {
   font-family: 'Nanum Brush Script', cursive !important;
-  font-size: 3.5em !important;
+  font-size: 5em !important;
   color: #333;
   margin: 0;
   word-break: keep-all;
-  line-height: 1.2;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {
   .topic-card h2 {
-    font-size: 3em !important;
+    font-size: 4em !important;
   }
 }
 
 @media (max-width: 480px) {
   .topic-card h2 {
-    font-size: 2.5em !important;
+    font-size: 3.5em !important;
   }
 }
 
@@ -202,7 +205,7 @@ body {
 .timer-container {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 0px;
   position: fixed;
   top: 350px;
   left: 50%;
@@ -211,23 +214,17 @@ body {
   cursor: pointer;
 }
 
-.clock-icon {
-  width: 250px;
-  height: 250px;
-  object-fit: contain;
-}
-
 .timer-text {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 7em !important;
+  font-size: 9em !important;
   font-weight: 700 !important;
   color: #333333;
   text-align: center;
   background-color: #f0f0f0;
-  padding: 15px 30px !important;
+  padding: 15px 0px 15px 0px !important;
   border-radius: 0;
   box-shadow: none;
-  margin: 15px;
+  margin: 0px;
   min-width: 200px;
   letter-spacing: 2px;
   display: inline-block;
@@ -886,7 +883,7 @@ button:disabled {
   }
   
   .topic-card h2 {
-    font-size: 2em !important;
+    font-size: 3em !important;
   }
 }
 
@@ -897,7 +894,7 @@ button:disabled {
   }
   
   .topic-card h2 {
-    font-size: 1.8em !important;
+    font-size: 2.5em !important;
   }
 }
 
@@ -951,18 +948,18 @@ button:disabled {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  padding: 15px 30px;
-  font-size: 18px;
-  background-color: #ffffff;
-  color: #1a1a1a;
+  padding: 15px 25px;
+  font-size: 1.5em;
+  background: none;
+  color: #333333;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  font-family: 'Nanum Brush Script', cursive;
+  z-index: 1000;
 }
 
 .next-topic-button:hover {
-  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 /* .confident-button {
@@ -1002,3 +999,11 @@ button:disabled {
     right: 60px;
   }
 } */
+
+.clock-icon {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  transform: rotate(-15deg);
+  margin-right: -30px;
+}
