@@ -69,7 +69,10 @@ function MenuPage1() {
           if (prevTimer <= 1) {
             clearInterval(timerRef.current);
             setShowExplosion(true);
-            setTimeout(() => setShowExplosion(false), 1000);
+            setTimeout(() => {
+              setShowExplosion(false);
+              setTimerPaused(true);
+            }, 1000);
             return 0;
           }
           return prevTimer - 1;
@@ -85,20 +88,27 @@ function MenuPage1() {
   }, [timerPaused]);
 
   const resetTimer = () => {
+    if (showExplosion) {
+      return;
+    }
+    setTimer(7);
+    setTimerPaused(false);
+  };
+
+  const getRandomTopic = () => {
+    if (showExplosion) {
+      return;
+    }
+    const levelTopics = selectedLevel === 'easy' ? topics.easy : 
+                       selectedLevel === 'medium' ? topics.medium : topics.hard;
+    const randomIndex = Math.floor(Math.random() * levelTopics.length);
+    setCurrentTopic(levelTopics[randomIndex]);
     setTimer(7);
     setTimerPaused(false);
   };
 
   const toggleTimer = () => {
     setTimerPaused(!timerPaused);
-  };
-
-  const getRandomTopic = () => {
-    const levelTopics = selectedLevel === 'easy' ? topics.easy : 
-                       selectedLevel === 'medium' ? topics.medium : topics.hard;
-    const randomIndex = Math.floor(Math.random() * levelTopics.length);
-    setCurrentTopic(levelTopics[randomIndex]);
-    resetTimer();
   };
 
   const handleLevelSelect = (level) => {
