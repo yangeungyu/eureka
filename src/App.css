@@ -24,75 +24,27 @@ body {
   background-color: #f0f0f0;
 }
 
-/* 메뉴 버튼 스타일 */
-.menu-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 2.5em;
-  cursor: pointer;
-  z-index: 10;
-  color: #333333;
-  background-color: #f0f0f0;
-  padding: 15px;
-  border-radius: 12px;
-  transition: background-color 0.3s;
-}
-
-.menu-button:hover {
-  background-color: #e0e0e0;
-}
-
-.menu-options {
-  position: fixed;
-  top: 70px;
-  left: 20px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  z-index: 1000;
-}
-
-.menu-options div {
-  padding: 12px 24px;
-  font-size: 1.2em;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Nanum Brush Script', cursive;
-  white-space: nowrap;
-}
-
-.menu-options div:hover {
-  background-color: #f5f5f5;
-}
-
 /* 종료 버튼 스타일 */
 .exit-button {
   position: fixed;
   top: 20px;
   right: 20px;
-  font-size: 2em;
-  color: #333333;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 24px;
   cursor: pointer;
-  z-index: 1000;
-  background-color: #f0f0f0;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.2s ease;
 }
 
 .exit-button:hover {
-  background-color: #ff6b6b;
-  color: white;
-  transform: rotate(90deg);
-  box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+  transform: scale(1.1);
 }
 
 /* 뒤로가기 버튼 스타일 */
@@ -122,6 +74,25 @@ body {
   box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
 }
 
+/* 메뉴 버튼 스타일 */
+.menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 2.5em;
+  cursor: pointer;
+  z-index: 10;
+  color: #333333;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+  background-color: #e0e0e0;
+}
+
 /* 메뉴창 스타일 */
 .menu-container {
   position: fixed;
@@ -142,19 +113,33 @@ body {
   transform: translateX(0);
 }
 
-.menu-container a {
+.menu-container .menu-link {
   padding: 24px 32px;
   text-decoration: none;
   color: #333333;
   font-size: 2.2em;
   display: block;
   border-radius: 16px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  font-family: 'Nanum Brush Script', cursive;
+  margin-bottom: 16px;
 }
 
-.menu-container a:hover {
+.menu-container .menu-link:hover {
   background-color: #e0e0e0;
+  transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    font-size: 2em;
+    padding: 12px;
+  }
+  
+  .menu-container {
+    width: 100%;
+    padding: 120px 20px 20px;
+  }
 }
 
 .container {
@@ -306,44 +291,6 @@ button:hover {
   background-color: #e0e0e0;
 }
 
-.start-button {
-  padding: 30px 60px;
-  font-size: 2.5em;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Nanum Brush Script', cursive;
-  margin-top: 40px;
-}
-
-.start-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-color: #444;
-}
-
-.start-button p {
-  margin: 0;
-  line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-  .start-button {
-    padding: 25px 50px;
-    font-size: 2.2em;
-  }
-}
-
-@media (max-width: 480px) {
-  .start-button {
-    padding: 20px 40px;
-    font-size: 2em;
-  }
-}
-
 .next-button {
   background-color: #2196F3;
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -369,12 +316,29 @@ button:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
+  justify-content: center;
+  height: 100vh;
   width: 100%;
   background-color: #f0f0f0;
-  position: relative;
-  padding-top: 40px;
+  cursor: pointer;
+}
+
+.logo-container {
+  margin-bottom: 40px;
+}
+
+.start-text {
+  font-size: 2em;
+  color: #333;
+  animation: blink 1.5s infinite;
+  text-align: center;
+  font-family: 'Nanum Brush Script', cursive;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .level-selection-screen {
@@ -543,7 +507,7 @@ button:disabled {
 }
 
 @media (max-width: 768px) {
-  .menu-button, .exit-button {
+  .exit-button {
     font-size: 2em;
     padding: 12px;
   }
@@ -565,7 +529,7 @@ button:disabled {
 }
 
 @media (max-width: 480px) {
-  .menu-button, .exit-button {
+  .exit-button {
     font-size: 1.8em;
     padding: 10px;
   }
