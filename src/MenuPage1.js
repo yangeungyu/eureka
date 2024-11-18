@@ -101,12 +101,15 @@ function MenuPage1() {
           <div className="level-selection-screen">
             <div className="level-buttons">
               <button onClick={() => handleLevelSelect('easy')}>
+                <img src="/onestar.png" alt="onestar" className="level-icon" />
                 Lv 1
               </button>
               <button onClick={() => handleLevelSelect('medium')}>
+                <img src="/twostar.png" alt="twostar" className="level-icon" />
                 Lv 2
               </button>
               <button onClick={() => handleLevelSelect('hard')}>
+                <img src="/threestar.png" alt="threestar" className="level-icon" />
                 Lv 3
               </button>
             </div>
