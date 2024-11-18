@@ -1,10 +1,9 @@
 import React from 'react';
 
-function Header() {
+function Header({ level }) {
   return (
     <header style={{ textAlign: 'center', padding: '1em', backgroundColor: '#f0f0f0' }}>
-      <h1>UTOPIC_AH🎉</h1>
-      <p>술자리 대화 걱정은 이제 끝! 랜덤 주제를 추천받아보세요!</p>
+      {level && <h2 style={{ marginTop: '0.5em', fontSize: '2em' }}>Lv {level}</h2>}
     </header>
   );
 }
