@@ -97,20 +97,23 @@ body {
 .menu-container {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -500px;
   width: 500px;
   height: 200%;
   background-color: #e8e8e8;
   color: #333333;
   padding: 160px 40px 40px;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s ease;
   z-index: 9999;
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
-  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .menu-container.open {
-  transform: translateX(0);
+  left: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 .menu-container .menu-link {

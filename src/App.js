@@ -58,13 +58,11 @@ function AppContent({ menuOpen, setMenuOpen }) {
           <div className="exit-button" onClick={handleExit}>
             ✕
           </div>
-          {menuOpen && (
-            <div className="menu-container open">
-              <div className="menu-item" onClick={() => handleMenuClick('/menu1')}>레벨 선택하기</div>
-              <div className="menu-item" onClick={() => handleMenuClick('/menu2')}>주제 추가하기</div>
-              <div className="menu-item" onClick={() => handleMenuClick('/menu3')}>계산 야바위</div>
-            </div>
-          )}
+          <div className={`menu-container ${menuOpen ? 'open' : ''}`}>
+            <div className="menu-item" onClick={() => handleMenuClick('/menu1')}>레벨 선택하기</div>
+            <div className="menu-item" onClick={() => handleMenuClick('/menu2')}>주제 추가하기</div>
+            <div className="menu-item" onClick={() => handleMenuClick('/menu3')}>계산 야바위</div>
+          </div>
         </>
       )}
       <Routes>
