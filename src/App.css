@@ -97,12 +97,12 @@ body {
 .menu-container {
   position: fixed;
   top: 0;
-  left: -500px;
-  width: 500px;
+  left: -20vw;
+  width: 20vw;
   height: 200%;
   background-color: #e8e8e8;
   color: #333333;
-  padding: 160px 40px 40px;
+  padding: 160px 20px 40px;
   transition: all 0.5s ease;
   z-index: 9999;
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
@@ -116,33 +116,38 @@ body {
   visibility: visible;
 }
 
+.menu-item {
+  padding: 20px;
+  font-size: 1.6em;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  font-family: 'Pretendard', sans-serif;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateX(10px);
+}
+
 .menu-container .menu-link {
   padding: 24px 32px;
   text-decoration: none;
   color: #333333;
-  font-size: 2.2em;
+  font-size: 2.5em;
   display: block;
   border-radius: 16px;
   transition: all 0.3s ease;
-  font-family: 'Nanum Brush Script', cursive;
-  margin-bottom: 16px;
+  font-family: 'Pretendard', sans-serif;
+  margin-bottom: 20px;
 }
 
 .menu-container .menu-link:hover {
-  background-color: #e0e0e0;
+  background-color: rgba(0, 0, 0, 0.05);
   transform: translateX(10px);
-}
-
-@media (max-width: 768px) {
-  .menu-button {
-    font-size: 2em;
-    padding: 12px;
-  }
-  
-  .menu-container {
-    width: 100%;
-    padding: 120px 20px 20px;
-  }
 }
 
 .container {
@@ -337,7 +342,7 @@ button:disabled {
 .start-text {
   font-size: 2em;
   color: #333;
-  animation: blink 1.5s infinite;
+  animation: blink 2.5s infinite;
   text-align: center;
   font-family: 'Nanum Brush Script', cursive;
 }
