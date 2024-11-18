@@ -105,15 +105,13 @@ function MenuPage1() {
         <img src="/logos2.png" alt="logo" className="game-logo" />
         {selectedLevel ? (
           showMiddleScreen ? (
-            <div className="topic-screen" onClick={handleMiddleScreenClick}>
-              <div className="random-topic-wrapper">
-                <div className="random-topic-text">
-                  <div>랜덤</div>
-                  <div>주제</div>
-                  <div>받기</div>
-                </div>
-                <img src="/dice2.png" alt="dice" className="topic-dice-icon" />
+            <div className="topic-screen" onClick={handleMiddleScreenClick} style={{animation: 'none'}}>
+              <div className="random-topic-text">
+                <div>랜덤</div>
+                <div>&nbsp;&nbsp;&nbsp;주제</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;받기</div>
               </div>
+              <img src="/dice2.png" alt="dice" className="topic-dice-icon" />
             </div>
           ) : (
             <>

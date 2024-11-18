@@ -633,6 +633,8 @@ button:disabled {
   padding: 40px;
   text-align: center;
   background-color: #f0f0f0;
+  transition: none;
+  transform: none;
 }
 
 .input-container {
@@ -881,12 +883,7 @@ button:disabled {
   align-items: center;
   height: 100vh;
   cursor: pointer;
-}
-
-.random-topic-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  position: relative;
 }
 
 .random-topic-text {
@@ -894,29 +891,36 @@ button:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: black;
   font-size: 72px;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.2;
   transition: transform 0.2s ease;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .topic-dice-icon {
   width: 300px;
   height: 300px;
   transition: transform 0.3s ease;
+  position: absolute;
+  left: calc(50% + 80px);
+  transform: translateY(-50%);
+  top: 50%;
 }
 
-.random-topic-wrapper:hover .random-topic-text {
-  transform: scale(1.05);
+.random-topic-text:hover {
+  transform: translateX(-50%) scale(1.05);
 }
 
-.random-topic-wrapper:hover .topic-dice-icon {
-  transform: rotate(360deg);
+.topic-screen:hover .topic-dice-icon {
+  transform: translateY(-50%) rotate(360deg);
 }
 
 .random-topic-text div {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .topic-page {
