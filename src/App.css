@@ -196,18 +196,10 @@ body {
 
 .topic-text {
   font-family: 'Nanum Brush Script', cursive;
-  font-size: 3em;
-  line-height: 1.4;
-  color: #333333;
-  word-break: keep-all;
-  word-wrap: break-word;
+  font-size: 80px;
+  color: #333;
   text-align: center;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .timer-container {
@@ -895,10 +887,18 @@ button:disabled {
   font-size: 72px;
   font-weight: bold;
   line-height: 1.2;
-  transition: transform 0.2s ease;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  transition: none;
+}
+
+.random-topic-text:hover {
+  transform: translateX(-50%);
+}
+
+.random-topic-text div {
+  margin: 5px 0;
 }
 
 .topic-dice-icon {
@@ -911,16 +911,16 @@ button:disabled {
   top: 50%;
 }
 
-.random-topic-text:hover {
-  transform: translateX(-50%) scale(1.05);
+@keyframes tiltShake {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  25% { transform: translateY(-50%) rotate(15deg); }
+  50% { transform: translateY(-50%) rotate(0deg); }
+  75% { transform: translateY(-50%) rotate(-15deg); }
+  100% { transform: translateY(-50%) rotate(0deg); }
 }
 
 .topic-screen:hover .topic-dice-icon {
-  transform: translateY(-50%) rotate(360deg);
-}
-
-.random-topic-text div {
-  margin: 5px 0;
+  animation: tiltShake 2s ease-in-out infinite;
 }
 
 .topic-page {
