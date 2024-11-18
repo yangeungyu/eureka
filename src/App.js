@@ -65,11 +65,13 @@ function AppContent({ menuOpen, setMenuOpen }) {
           </div>
         </>
       )}
-      <Routes>
-        <Route path="/menu1" element={<MenuPage1 />} />
-        <Route path="/menu2" element={<MenuPage2 />} />
-        <Route path="/menu3" element={<MenuPage3 />} />
-      </Routes>
+      <div className={`app-content ${menuOpen ? 'blur' : ''}`}>
+        <Routes>
+          <Route path="/menu1" element={<MenuPage1 />} />
+          <Route path="/menu2" element={<MenuPage2 />} />
+          <Route path="/menu3" element={<MenuPage3 />} />
+        </Routes>
+      </div>
     </div>
   );
 }
