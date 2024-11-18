@@ -106,10 +106,13 @@ function MenuPage1() {
         {selectedLevel ? (
           showMiddleScreen ? (
             <div className="topic-screen" onClick={handleMiddleScreenClick}>
-              <div className="random-topic-text">
-                <div>랜덤</div>
-                <div>주제</div>
-                <div>받기</div>
+              <div className="random-topic-wrapper">
+                <div className="random-topic-text">
+                  <div>랜덤</div>
+                  <div>주제</div>
+                  <div>받기</div>
+                </div>
+                <img src="/dice2.png" alt="dice" className="topic-dice-icon" />
               </div>
             </div>
           ) : (
