@@ -126,7 +126,11 @@ function MenuPage1() {
                   <img src="/explosion.gif" alt="Explosion" className="explosion-animation" />
                 </div>
               )}
-              {currentTopic && <TopicCard topic={currentTopic} />}
+              {currentTopic && (
+                <div className="topic-card fade-in" key={currentTopic}>
+                  <TopicCard topic={currentTopic} />
+                </div>
+              )}
               <button className="next-topic-button" onClick={getRandomTopic}>
                 다음 질문 →
               </button>
