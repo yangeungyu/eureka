@@ -79,7 +79,7 @@ function StartScreen() {
 
   return (
     <div className="start-screen" onClick={() => navigate('/menu1')}>
-      <div className="logo-container">
+      <div className="logo">
         <img src="/logo192.png" alt="UTOPICAH Logo" className="app-logo" />
       </div>
       <div className="start-text">
