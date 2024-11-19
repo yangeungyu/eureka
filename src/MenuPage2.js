@@ -57,29 +57,33 @@ function MenuPage2() {
       </div>
 
       {/* 주제 목록 */}
-      <ul className="topic-list">
-        {topics.map((topic) => (
-          <li key={topic.id} className="topic-item">
-            <div className="topic-content">
-              <span className="topic-text">{topic.text}</span>
-              <div className="topic-actions">
-                <button
-                  onClick={() => handleLike(topic.id)}
-                  className="like-button"
-                >
-                  👍 {topic.likes}
-                </button>
-                <button
-                  onClick={() => deleteTopic(topic.id)}
-                  className="delete-button"
-                >
-                  ✕
-                </button>
+      <div className="topic-list-container">
+        <ul className="topic-list">
+          {topics.map((topic) => (
+            <li key={topic.id} className="topic-item">
+              <div className="topic-content">
+                <div className="topic-text-container">
+                  <span className="topic-text">{topic.text}</span>
+                </div>
+                <div className="topic-actions">
+                  <button
+                    onClick={() => handleLike(topic.id)}
+                    className="like-button"
+                  >
+                    👍 {topic.likes}
+                  </button>
+                  <button
+                    onClick={() => deleteTopic(topic.id)}
+                    className="delete-button"
+                  >
+                    ✕
+                  </button>
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
